@@ -4,8 +4,8 @@
 
 Open up a new folder and run the following commands in a git bash terminal:
 
-### git pull https://github.com/OrenSayag/Stopwatch
-### npm i
+### `git pull https://github.com/OrenSayag/Stopwatch`
+### `npm i`
 
 In order to run the app on port 3000:
 ### `npm start`
