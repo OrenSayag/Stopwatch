@@ -1,0 +1,89 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.clock{
+    
+}
+
+$pi:3.14159265358979;
+$_precision: 10;
+
+@function pow($base, $exp) {
+    $value: $base;
+    @if $exp > 1 {
+      @for $i from 2 through $exp {
+        $value: $value * $base;
+      }
+    }
+    @if $exp < 1{
+      @for $i from 0 through -$exp {
+        $value: $value / $base;
+      }
+    }
+    @return $value;
+  }
+  
+  @function fact($num) {
+    $fact: 1;
+    @if $num > 0{
+      @for $i from 1 through $num {
+        $fact: $fact * $i;
+      }
+    }
+    @return $fact;
+  }
+  
+  @function _to_unitless_rad($angle) {
+    @if unit($angle) == "deg" {
+      $angle: $angle / 180deg * $pi;
+    }
+    @if unit($angle) == "rad" {
+      $angle: $angle / 1rad;
+    }
+    @return $angle;
+  }
+
+@function cos($angle){
+    $a: _to_unitless_rad($angle);
+    $cos: 1;
+    @for $n from 1 through $_precision {
+      $cos: $cos + ( pow(-1,$n) / fact(2*$n) ) * pow($a,2*$n);
+    }
+    @return $cos;
+  }
+
+  @function sin($angle){
+    $a: _to_unitless_rad($angle);
+    $sin: $a;
+    @for $n from 1 through $_precision {
+      $sin: $sin + (pow(-1, $n) / fact(2 * $n + 1) ) * pow($a, (2 * $n + 1));
+    }
+    @return $sin;
+  }
+
+.clockline li{
+    width:1px;
+    height:20px;
+    border-radius:2px;
+    position:absolute;
+    left: calc(50% - 5px);
+    top: calc(50% - 5px);
+    $r: 112;
+    
+    @for $i from 1 through 100{
+        &:nth-child(#{$i}){
+            $angle:450 + (360 / 100) * $i;
+            $radian: (360 / 100) * ($pi/180) * $i;
+            $x: $r * cos($radian) + px;
+            $y: $r * sin($radian) + px;
+            transform-origin:100% 0%;
+            transform: translate($x,$y) rotate( $angle + deg) ;
+            @if ($i % 5) == 0 {
+              height:32px;
+            }
+        }
+    }
+}
