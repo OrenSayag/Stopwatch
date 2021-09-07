@@ -2,7 +2,7 @@
 
 ## Running Instructions
 
-Open up a new folder and run the following commands in a git bash terminal:
+Open up a new folder and run the following commands in a bash terminal:
 
 ### `git pull https://github.com/OrenSayag/Stopwatch`
 ### `npm i`
