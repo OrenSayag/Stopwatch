@@ -1,0 +1,47 @@
+
+      .o8                                  
+     "888                                  
+ .oooo888   .ooooo.  ooo. .oo.    .ooooo.  
+d88' `888  d88' `88b `888P"Y88b  d88' `88b 
+888   888  888   888  888   888  888ooo888 
+888   888  888   888  888   888  888    .o 
+`Y8bod88P" `Y8bod8P' o888o o888o `Y8bod8P' 
+
+1. understand stoybook
+2. create react app, install storybook & tailwindcss & ts
+3. build the stopwatch
+    - skeletal logic
+        - start/stop
+        - lap
+        - reset
+        - .1 sync
+    - stye with tailwind - make the circle happen
+4. implement stopwatch in app, display logs with tailwind
+5. deploy, upload to github and storybook, watch out for running the project in watch mode
+6. ADD AND VALIDATE README.MD INSTRUECTIONS FOR RUNNING THE project
+6.5. Optimize stowatch - drop setInterval, use a better option
+6.55. Add layout configuration to change the background color of the story layout
+6.6. Add variation options for the stories
+  - changing size of buttons
+  - changing color of text
+  - changing font-family
+  - changing font size
+
+
+rm postcss-scss & test
+
+
+
+    .                   .o8            
+  .o8                  "888            
+.o888oo  .ooooo.   .oooo888   .ooooo.  
+  888   d88' `88b d88' `888  d88' `88b 
+  888   888   888 888   888  888   888 
+  888 . 888   888 888   888  888   888 
+  "888" `Y8bod8P' `Y8bod88P" `Y8bod8P' 
+
+
+
+
+7. send link to Tal
+

@@ -29,6 +29,8 @@ export const Stopwatch = ({
     let diffInMin = (diffInHrs - hrs) * 60;
     let mins = Math.floor(diffInMin);
 
+    
+
     let diffInSec = (diffInMin - mins) * 60;
     let secs = Math.floor(diffInSec);
 
