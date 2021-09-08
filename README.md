@@ -13,5 +13,8 @@ In order to run the app on port 3000:
 In order to build the app:
 ### `npm run build`
 
+In order to initialize watch mode which will build the app upon changes in the ts|js|tsx|jsx files in the src folder:
+### `npm run watch`
+
 In order to view the Storybook dashboard with the Stopwatch and LapsDisplay components:
 ### `npm run storybook`
