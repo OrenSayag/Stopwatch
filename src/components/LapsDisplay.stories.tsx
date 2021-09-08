@@ -15,5 +15,7 @@ Primary.args = {
     { lapIndex: 2, ms: "2", secs: "2", mins: "2", hrs: "2" },
     { lapIndex: 3, ms: "3", secs: "3", mins: "3", hrs: "3" },
   ],
-  clearLapHistory: ()=>{alert('This will clear the lap history')}
+  clearLapHistory: () => {
+    alert("This will clear the lap history");
+  },
 };

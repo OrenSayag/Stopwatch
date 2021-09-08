@@ -7,24 +7,21 @@ type LapsProps = {
 };
 
 export const LapsDisplay = ({ laps, clearLapHistory }: LapsProps) => {
+  const myRef: any = useRef(null);
 
-    const myRef:any = useRef(null)
-
-
-    useEffect(() => {
-        console.log("New lap added!")
-        if(myRef.current){
-            
-            myRef.current.scroll({
-                top: myRef.current.scrollHeight
-            })
-        }
-    }, [laps])
+  useEffect(() => {
+    if (myRef.current) {
+      myRef.current.scroll({
+        top: myRef.current.scrollHeight,
+      });
+    }
+  }, [laps]);
 
   return (
     <div
-      className=" max-h-96 
+      className=" max-h-full 
         flex flex-col gap-3 w-full md:w-1/2 px-5 relative
+        mt-5
         "
     >
       <div
@@ -35,12 +32,9 @@ export const LapsDisplay = ({ laps, clearLapHistory }: LapsProps) => {
 
             "
       >
-          <div>
-        Laps
-          </div>
+        <div>Laps</div>
         <button
-            className="text-sm font-sans text-gray-400"
-
+          className="text-sm font-sans text-gray-400"
           onClick={() => {
             clearLapHistory();
           }}
@@ -49,25 +43,24 @@ export const LapsDisplay = ({ laps, clearLapHistory }: LapsProps) => {
         </button>
       </div>
       <div>
-
-        <div 
-        ref={myRef}
-        className="flex flex-col
+        <div
+          ref={myRef}
+          className="flex flex-col
          max-h-80
         overflow-y-scroll scrollbar-hide
         items-center gap-5
-        ">
+        "
+        >
           {laps.map((lap) => {
             return (
-              <div key={lap.lapIndex}
-              className="
+              <div
+                key={lap.lapIndex}
+                className="
               flex justify-between w-full md:w-1/2 border-t-2 border-b-2 border-yellow-100
               py-3 px-2
               "
               >
-                <div
-                className="font-bold"
-                >{lap.lapIndex}</div>
+                <div className="font-bold">{lap.lapIndex}</div>
                 <div>{`${lap.hrs}:${lap.mins}:${lap.secs}:${lap.ms}`}</div>
               </div>
             );
