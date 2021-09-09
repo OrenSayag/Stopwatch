@@ -2,7 +2,7 @@
 
 ## Running Instructions
 
-Make sure you have the following programs installed on your machine: git, node, npm
+Make sure you have the following programs installed on your machine: git, node, npm.
 Open up a new folder and run the following commands in a bash terminal:
 
 ### `git init`
